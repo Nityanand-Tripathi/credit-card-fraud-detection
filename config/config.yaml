@@ -1,0 +1,30 @@
+# Project Configuration
+project:
+  name: "Credit Card Fraud Detection"
+  version: "1.0"
+
+# Data paths
+data:
+  raw_path: "data/raw/creditcard.csv"
+  train_path: "data/processed/train.csv"
+  test_path: "data/processed/test.csv"
+
+# Preprocessing
+preprocessing:
+  test_size: 0.2
+  random_state: 42
+  scale_columns:
+    - "Amount"
+    - "Time"
+
+# Model settings
+model:
+  random_state: 42
+  n_estimators: 100
+  max_depth: 6
+  learning_rate: 0.1
+
+# Paths
+paths:
+  model_dir: "models/"
+  report_dir: "reports/"

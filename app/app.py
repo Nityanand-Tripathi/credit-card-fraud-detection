@@ -25,7 +25,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev_secret_key_12938123
 # -------------------------------------------------------------------------
 # Model Loader & Safety Fallback
 # -------------------------------------------------------------------------
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'xgboost.pkl')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'random_forest.pkl')
 model = None
 
 try:

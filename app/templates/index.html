@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis Shield // Enterprise Fraud Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --glass-bg: rgba(20, 30, 55, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --neon-blue: #00f2fe;
+            --neon-green: #00ff87;
+            --neon-red: #ff007f;
+            --text-main: #e2e8f0;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 10%, #1e293b 0%, var(--bg-dark) 70%);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 242, 254, 0.25);
+            box-shadow: 0 12px 40px 0 rgba(0, 242, 254, 0.08);
+        }
+
+        .navbar-brand-cyber {
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-control, .form-select {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background: rgba(15, 23, 42, 0.8);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+            color: #fff;
+        }
+
+        /* Spinner custom loader overrides */
+        .cyber-loader {
+            display: none;
+            width: 3rem;
+            height: 3rem;
+            border: 0.35em solid rgba(0, 242, 254, 0.1);
+            border-top-color: var(--neon-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .badge-low { background: rgba(0, 255, 135, 0.2); color: #00ff87; border: 1px solid #00ff87; }
+        .badge-medium { background: rgba(255, 170, 0, 0.2); color: #ffaa00; border: 1px solid #ffaa00; }
+        .badge-high { background: rgba(255, 0, 127, 0.2); color: #ff007f; border: 1px solid #ff007f; }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            background: rgba(7, 10, 19, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark glass-card m-3 px-4">
+        <div class="container-fluid">
+            <span class="navbar-brand navbar-brand-cyber fs-4">
+                <i class="fa-solid fa-shield-halved me-2"></i>AEGIS SHIELD
+            </span>
+            <span class="badge bg-secondary d-none d-md-inline-block py-2 px-3">
+                <i class="fa-solid fa-server me-1 text-success"></i> Production Node Live
+            </span>
+        </div>
+    </nav>
+
+    <div class="container-fluid px-4 py-2">
+        <div class="row g-4">
+            
+            <div class="col-xl-4 col-lg-5 col-12">
+                <div class="glass-card p-4 mb-4">
+                    <h5 class="text-uppercase tracking-wider text-muted small mb-3">
+                        <i class="fa-solid fa-microchip text-info me-2"></i>Core Model Intelligence
+                    </h5>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <small class="text-muted d-block">Engine Architecture</small>
+                            <span class="fw-bold text-white small">{{ meta.model_name }}</span>
+                        </div>
+                        <div class="col-6">
+                            <small class="text-muted d-block">Historical Base Size</small>
+                            <span class="fw-bold text-white small">{{ meta.dataset_size }}</span>
+                        </div>
+                        <div class="col-6">
+                            <small class="text-muted d-block">Scoring Accuracy</small>
+                            <span class="fw-bold text-success">{{ meta.accuracy }}</span>
+                        </div>
+                        <div class="col-6">
+                            <small class="text-muted d-block">Imbalance Target Class Ratio</small>
+                            <span class="fw-bold text-danger">{{ meta.fraud_percentage }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-4">
+                    <h5 class="text-uppercase text-muted small mb-3">
+                        <i class="fa-solid fa-chart-pie text-info me-2"></i>System Analytics Stream
+                    </h5>
+                    <div style="position: relative; height:220px; width:100%">
+                        <canvas id="fraudPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-8 col-lg-7 col-12">
+                <div class="glass-card p-4 mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
+                        <div>
+                            <h4 class="mb-1 text-white">Transaction Risk Profiling Engine</h4>
+                            <p class="text-muted small mb-0">Input features to evaluate fraud vector variables via production inference pipelines</p>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-success btn-sm" onclick="injectTemplate('normal')">
+                                <i class="fa-solid fa-circle-check me-1"></i> Seed Legitimate
+                            </button>
+                            <button type="button" class="btn btn-outline-danger btn-sm" onclick="injectTemplate('fraud')">
+                                <i class="fa-solid fa-triangle-exclamation me-1"></i> Seed High Risk
+                            </button>
+                        </div>
+                    </div>
+
+                    <form id="scoringForm" class="row g-3">
+                        <div class="col-md-4 col-sm-6">
+                            <label class="form-label text-muted small fw-bold">Transaction Amount ($)</label>
+                            <input type="number" step="0.01" class="form-control" id="amount" placeholder="e.g. 125.50" required value="45.00">
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <label class="form-label text-muted small fw-bold">Delta Time Metric (Secs)</label>
+                            <input type="number" class="form-control" id="time" placeholder="e.g. 86400" required value="40000">
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <label class="form-label text-muted small fw-bold">Principal V1 Anonymized</label>
+                            <input type="number" step="0.0001" class="form-control" id="v1" value="-0.523">
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <label class="form-label text-muted small fw-bold">Principal V2 Anonymized</label>
+                            <input type="number" step="0.0001" class="form-control" id="v2" value="0.231">
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <label class="form-label text-muted small fw-bold">Principal V3 Anonymized</label>
+                            <input type="number" step="0.0001" class="form-control" id="v3" value="1.102">
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <label class="form-label text-muted small fw-bold">Principal V4-V28 Vector Default</label>
+                            <input type="text" class="form-control" value="Auto-Balanced Array [0.0]" disabled>
+                        </div>
+
+                        <div class="col-12 mt-4 text-center">
+                            <button type="submit" class="btn btn-primary px-5 py-2 fw-bold w-100 style-btn" id="btnSubmit">
+                                <i class="fa-solid fa-bolt me-2"></i> Execute Analytics Verification
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="text-center my-4">
+                        <div class="cyber-loader mx-auto" id="engineLoader"></div>
+                    </div>
+
+                    <div id="evaluationDisplay" class="mt-4 d-none p-4 rounded-3 border">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="text-uppercase small text-muted mb-1">Analysis Assessment Outcome</h5>
+                                <h3 id="resRiskTitle" class="fw-bold mb-2">---</h3>
+                                <p class="mb-0 small text-light">
+                                    System calculated an architectural inference index confidence value of 
+                                    <strong id="resConfidence" class="text-white">0.00%</strong>.
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 col-12 mt-md-0">
+                                <span id="resBadge" class="px-4 py-2 fs-5 fw-bold rounded-pill text-uppercase d-inline-block">Unknown</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <div class="row mt-2">
+            <div class="col-12">
+                <div class="glass-card p-4 mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+                        <h5 class="text-white mb-0"><i class="fa-solid fa-list-check text-info me-2"></i>Live System Session Ledger History</h5>
+                        <button class="btn btn-sm btn-outline-light" onclick="exportLedgerToCSV()">
+                            <i class="fa-solid fa-file-csv me-1"></i> Export Session Ledger Data
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle mb-0" id="ledgerTable">
+                            <thead>
+                                <tr class="text-muted small border-bottom border-secondary">
+                                    <th>Audit Timestamp</th>
+                                    <th>Volume Amount</th>
+                                    <th>Confidence Factor</th>
+                                    <th>Threat Risk Profiling Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="emptyLedgerRow">
+                                    <td colspan="4" class="text-center py-4 text-muted small">No transactions evaluated during current operational dashboard sequence.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-muted small py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 text-white-50">Aegis Shield Cloud Pipeline — Engineered for Enterprise Financial Networks</p>
+            <p class="mb-0 text-muted" style="font-size: 11px;">Powered by Flask, XGBoost Ensemble Classifiers, and Modern Bootstrap Design Paradigms.</p>
+        </div>
+    </footer>
+
+    <script>
+        // System Session Memory Cache Initialization Data
+        let sessionDataLedger = [];
+        let fraudCount = 0;
+        let clearCount = 0;
+        let statChartInstance = null;
+
+        // Initialize Live Metric Presentation Charts
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('fraudPieChart').getContext('2d');
+            statChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Legitimate Cleared', 'Flagged Threat Anomalies'],
+                    datasets: [{
+                        data: [12, 2], // Baseline seed values
+                        backgroundColor: ['rgba(0, 255, 135, 0.65)', 'rgba(255, 0, 127, 0.65)'],
+                        borderColor: ['#00ff87', '#ff007f'],
+                        borderWidth: 1.5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#e2e8f0' } }
+                    }
+                }
+            });
+            clearCount = 12;
+            fraudCount = 2;
+        });
+
+        // Seed injection engine logic
+        function injectTemplate(scenario) {
+            if (scenario === 'normal') {
+                document.getElementById('amount').value = '34.50';
+                document.getElementById('time').value = '94200';
+                document.getElementById('v1').value = '1.192';
+                document.getElementById('v2').value = '-0.231';
+                document.getElementById('v3').value = '0.412';
+            } else {
+                document.getElementById('amount').value = '2450.00';
+                document.getElementById('time').value = '4102';
+                document.getElementById('v1').value = '-6.392';
+                document.getElementById('v2').value = '7.121';
+                document.getElementById('v3').value = '-4.890';
+            }
+        }
+
+        // Live Dynamic Form Submission Processing Intercept Form Logic
+        document.getElementById('scoringForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Toggle Layout Loading UI Sequences Active
+            document.getElementById('engineLoader').style.display = 'block';
+            document.getElementById('evaluationDisplay').classList.add('d-none');
+            const submitBtn = document.getElementById('btnSubmit');
+            submitBtn.disabled = true;
+
+            // Extract values safely
+            const reqBody = {
+                amount: document.getElementById('amount').value,
+                time: document.getElementById('time').value,
+                v1: document.getElementById('v1').value,
+                v2: document.getElementById('v2').value,
+                v3: document.getElementById('v3').value
+            };
+
+            // Enforce synthetic UX calculation processing interval layout delay for realism
+            setTimeout(async () => {
+                try {
+                    const response = await fetch('/predict', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(reqBody)
+                    });
+
+                    const result = await response.json();
+                    
+                    if (result.status === 'success') {
+                        presentAnalysisResult(result);
+                    } else {
+                        alert("Engine Error: " + (result.error || "Malformed API Pipeline Response"));
+                    }
+                } catch (err) {
+                    console.error(err);
+                    alert("Critical Exception contacting validation infrastructure backend nodes.");
+                } finally {
+                    document.getElementById('engineLoader').style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+            }, 850); 
+        });
+
+        function presentAnalysisResult(data) {
+            const displayBox = document.getElementById('evaluationDisplay');
+            const title = document.getElementById('resRiskTitle');
+            const confidence = document.getElementById('resConfidence');
+            const badge = document.getElementById('resBadge');
+
+            // Set up border color metrics natively using response context structural variables
+            displayBox.className = `mt-4 p-4 rounded-3 border glass-card border-${data.risk_class}`;
+            title.innerText = `${data.risk_level} Pattern Match`;
+            confidence.innerText = data.confidence;
+            
+            badge.innerText = data.risk_level;
+            badge.className = `px-4 py-2 fs-5 fw-bold rounded-pill text-uppercase d-inline-block badge-${data.risk_class}`;
+            
+            displayBox.classList.remove('d-none');
+
+            // Dynamic Session Ledger State Updating 
+            sessionDataLedger.unshift({
+                timestamp: data.timestamp,
+                amount: data.amount,
+                confidence: data.confidence,
+                risk: data.risk_level
+            });
+
+            updateLedgerTableView();
+            updateChartMetrics(data.risk_level);
+        }
+
+        function updateLedgerTableView() {
+            const emptyRow = document.getElementById('emptyLedgerRow');
+            if (emptyRow) emptyRow.remove();
+
+            const tbody = document.querySelector('#ledgerTable tbody');
+            tbody.innerHTML = '';
+
+            sessionDataLedger.forEach(item => {
+                let rClass = 'badge-low';
+                if (item.risk.includes('Medium')) rClass = 'badge-medium';
+                if (item.risk.includes('High')) rClass = 'badge-high';
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="text-white-50 font-monospace">${item.timestamp}</td>
+                    <td class="fw-bold">${item.amount}</td>
+                    <td>${item.confidence}</td>
+                    <td><span class="px-2 py-1 rounded small ${rClass}">${item.risk}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function updateChartMetrics(riskLevel) {
+            if (riskLevel.includes('High') || riskLevel.includes('Medium')) {
+                fraudCount++;
+            } else {
+                clearCount++;
+            }
+            statChartInstance.data.datasets[0].data = [clearCount, fraudCount];
+            statChartInstance.update();
+        }
+
+        function exportLedgerToCSV() {
+            if (sessionDataLedger.length === 0) {
+                alert("Session history memory registry is currently empty.");
+                return;
+            }
+            
+            let csvContent = "data:text/csv;charset=utf-8,Timestamp,Amount,Confidence,Risk Level\n";
+            sessionDataLedger.forEach(r => {
+                csvContent += `"${r.timestamp}","${r.amount}","${r.confidence}","${r.risk}"\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `Aegis_Audit_Ledger_${new Date().

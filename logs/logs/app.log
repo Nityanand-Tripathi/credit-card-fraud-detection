@@ -1,0 +1,112 @@
+2026-07-08 16:05:47,405 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:05:47,405 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:05:47,405 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:05:47,405 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:05:47,405 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:05:47,553 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 16:05:47,553 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-08 16:05:47,553 [INFO]  * Restarting with stat
+2026-07-08 16:05:48,688 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:05:48,688 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:05:48,689 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:05:48,689 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:05:48,691 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:05:48,758 [WARNING]  * Debugger is active!
+2026-07-08 16:05:48,768 [INFO]  * Debugger PIN: 834-599-943
+2026-07-08 16:14:56,990 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:14:56,990 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:14:57,002 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:14:57,003 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:14:57,004 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:14:57,144 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 16:14:57,145 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-08 16:14:57,148 [INFO]  * Restarting with stat
+2026-07-08 16:14:57,987 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:14:57,987 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:14:57,987 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:14:57,987 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:14:57,989 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:14:58,043 [WARNING]  * Debugger is active!
+2026-07-08 16:14:58,050 [INFO]  * Debugger PIN: 834-599-943
+2026-07-08 16:16:46,260 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:16:46,262 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:16:46,262 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:16:46,262 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:16:46,264 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:16:46,429 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 16:16:46,433 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-08 16:16:46,437 [INFO]  * Restarting with stat
+2026-07-08 16:16:48,327 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:16:48,327 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:16:48,327 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:16:48,327 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:16:48,327 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:16:48,406 [WARNING]  * Debugger is active!
+2026-07-08 16:16:48,412 [INFO]  * Debugger PIN: 834-599-943
+2026-07-08 16:18:48,774 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:18:48,774 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:18:48,774 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:18:48,774 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:18:48,774 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:18:48,898 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 16:18:48,899 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-08 16:18:48,901 [INFO]  * Restarting with stat
+2026-07-08 16:18:49,645 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:18:49,647 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:18:49,647 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:18:49,647 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:18:49,647 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:18:49,701 [WARNING]  * Debugger is active!
+2026-07-08 16:18:49,706 [INFO]  * Debugger PIN: 834-599-943
+2026-07-08 16:33:39,349 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:33:39,351 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:33:39,353 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:33:39,361 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:33:39,376 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:33:39,638 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 16:33:39,644 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-08 16:33:39,644 [INFO]  * Restarting with stat
+2026-07-08 16:33:42,545 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:33:42,545 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:33:42,545 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:33:42,545 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:33:42,545 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:33:42,613 [WARNING]  * Debugger is active!
+2026-07-08 16:33:42,623 [INFO]  * Debugger PIN: 834-599-943
+2026-07-08 16:40:41,910 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:40:41,912 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:40:41,912 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:40:41,912 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:40:41,912 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:40:42,072 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 16:40:42,072 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-08 16:40:42,076 [INFO]  * Restarting with stat
+2026-07-08 16:40:43,033 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\best_model.pkl
+2026-07-08 16:40:43,033 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\logistic_regression.pkl
+2026-07-08 16:40:43,033 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\random_forest.pkl
+2026-07-08 16:40:43,033 [WARNING] File not found: C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\xgboost.pkl
+2026-07-08 16:40:43,033 [WARNING] scaler_params.json not found at C:\Users\tripa\Desktop\MLW\credit-card-fraud-detection\app\models\scaler_params.json
+2026-07-08 16:40:43,097 [WARNING]  * Debugger is active!
+2026-07-08 16:40:43,111 [INFO]  * Debugger PIN: 834-599-943
+2026-07-08 16:45:53,478 [INFO] Loaded model 'best_model' from best_model.pkl
+2026-07-08 16:45:53,995 [ERROR] Failed to unpickle logistic_regression.pkl: STACK_GLOBAL requires str
+2026-07-08 16:45:55,006 [ERROR] Failed to unpickle random_forest.pkl: STACK_GLOBAL requires str
+2026-07-08 16:45:55,040 [INFO] Loaded model 'xgboost' from xgboost.pkl
+2026-07-08 16:45:55,044 [ERROR] Failed to parse scaler_params.json: 'mean'
+2026-07-08 16:45:55,139 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-08 16:45:55,140 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-08 16:45:55,144 [INFO]  * Restarting with stat
+2026-07-08 16:45:59,727 [INFO] Loaded model 'best_model' from best_model.pkl
+2026-07-08 16:45:59,849 [ERROR] Failed to unpickle logistic_regression.pkl: STACK_GLOBAL requires str
+2026-07-08 16:45:59,996 [ERROR] Failed to unpickle random_forest.pkl: STACK_GLOBAL requires str
+2026-07-08 16:46:00,016 [INFO] Loaded model 'xgboost' from xgboost.pkl
+2026-07-08 16:46:00,020 [ERROR] Failed to parse scaler_params.json: 'mean'
+2026-07-08 16:46:00,075 [WARNING]  * Debugger is active!
+2026-07-08 16:46:00,089 [INFO]  * Debugger PIN: 834-599-943

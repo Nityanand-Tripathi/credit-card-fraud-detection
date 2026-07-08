@@ -1,45 +1,39 @@
 import pandas as pd
-import numpy as np
 import joblib
 import os
 
-def load_best_model(model_name="random_forest"):
-    model_path = f"models/{model_name}.pkl"
-    
-    if not os.path.exists(model_path):
-        raise FileNotFoundError(f"Model not found: {model_path}")
-    
-    print(f"Loading model: {model_path}")
-    model = joblib.load(model_path)
+# loading the best model we saved after evaluation
+def load_model():
+    model = joblib.load("models/best_model.pkl")
     return model
 
-def predict_transaction(model, transaction_data):
-    df = pd.DataFrame([transaction_data])
+def predict(model, transaction):
+    df = pd.DataFrame([transaction])
     prediction = model.predict(df)[0]
     probability = model.predict_proba(df)[0][1]
-
-    if prediction == 1:
-        print(f"  >> FRAUD DETECTED! Probability: {probability:.4f}")
-    else:
-        print(f"  >> Transaction is NORMAL. Fraud probability: {probability:.4f}")
-
     return prediction, probability
 
 if __name__ == "__main__":
-    print("Loading test data...")
-    
-    if not os.path.exists("data/processed/test.csv"):
-        raise FileNotFoundError("test.csv not found in data/processed/")
-    
+    print("Loading model...")
+    model = load_model()
+
+    # loading test data to try some predictions
     test = pd.read_csv("data/processed/test.csv")
+    X_test = test.drop("Class", axis=1)
+    y_test = test["Class"]
 
-    # Choose model: "random_forest", "xgboost", or "logistic_regression"
-    model = load_best_model("random_forest")
+    print("\n--- Sample Predictions ---\n")
 
-    print("\n--- Sample Predictions (first 5) ---\n")
+    # testing on 5 random transactions
     for i in range(5):
-        row = test.iloc[i].drop("Class").to_dict()
-        actual = test.iloc[i]["Class"]
-        print(f"Transaction #{i+1}:")
-        pred, prob = predict_transaction(model, row)
-        print(f"  Actual:    {'FRAUD' if actual == 1 else 'NORMAL'}\n")
+        row = X_test.iloc[i].to_dict()
+        actual = y_test.iloc[i]
+        pred, prob = predict(model, row)
+
+        print(f"Transaction {i+1}:")
+        print(f"  Actual  : {'FRAUD' if actual == 1 else 'NORMAL'}")
+        print(f"  Predicted: {'FRAUD' if pred == 1 else 'NORMAL'}")
+        print(f"  Fraud Probability: {round(prob * 100, 2)}%")
+        print()
+
+    print("Done!")

@@ -224,3 +224,45 @@
 2026-07-08 23:11:55,428 [INFO] 127.0.0.1 - - [08/Jul/2026 23:11:55] "GET /api/health HTTP/1.1" 200 -
 2026-07-08 23:12:24,355 [INFO] Prediction made | model=best_model amount=65434672.0 time=4000.0 -> pred=0 prob=0.0061186449602246284
 2026-07-08 23:12:24,357 [INFO] 127.0.0.1 - - [08/Jul/2026 23:12:24] "POST /api/predict HTTP/1.1" 200 -
+2026-07-09 00:30:32,144 [INFO] Loaded model 'best_model' from best_model.pkl
+2026-07-09 00:30:32,409 [INFO] Loaded model 'logistic_regression' from logistic_regression.pkl
+2026-07-09 00:30:33,001 [INFO] Loaded model 'random_forest' from random_forest.pkl
+2026-07-09 00:30:33,031 [INFO] Loaded model 'xgboost' from xgboost.pkl
+2026-07-09 00:30:33,034 [INFO] Loaded scaler (full mode, 30 params)
+2026-07-09 00:30:33,171 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 00:30:33,173 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-09 00:30:33,179 [INFO]  * Restarting with stat
+2026-07-09 00:30:40,965 [INFO] Loaded model 'best_model' from best_model.pkl
+2026-07-09 00:30:41,099 [INFO] Loaded model 'logistic_regression' from logistic_regression.pkl
+2026-07-09 00:30:41,300 [INFO] Loaded model 'random_forest' from random_forest.pkl
+2026-07-09 00:30:41,320 [INFO] Loaded model 'xgboost' from xgboost.pkl
+2026-07-09 00:30:41,322 [INFO] Loaded scaler (full mode, 30 params)
+2026-07-09 00:30:41,358 [WARNING]  * Debugger is active!
+2026-07-09 00:30:41,371 [INFO]  * Debugger PIN: 145-531-737
+2026-07-09 00:32:45,633 [INFO] 127.0.0.1 - - [09/Jul/2026 00:32:45] "GET / HTTP/1.1" 200 -
+2026-07-09 00:32:46,379 [INFO] 127.0.0.1 - - [09/Jul/2026 00:32:46] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-07-09 00:32:46,383 [INFO] 127.0.0.1 - - [09/Jul/2026 00:32:46] "GET /static/js/main.js HTTP/1.1" 200 -
+2026-07-09 00:32:46,779 [INFO] 127.0.0.1 - - [09/Jul/2026 00:32:46] "GET /api/health HTTP/1.1" 200 -
+2026-07-09 00:33:06,013 [INFO] Prediction made | model=best_model amount=764.9345 time=457899.0 -> pred=1 prob=0.7541356682777405
+2026-07-09 00:33:06,014 [INFO] 127.0.0.1 - - [09/Jul/2026 00:33:06] "POST /api/predict HTTP/1.1" 200 -
+2026-07-09 00:41:54,314 [INFO] Loaded model 'best_model' from best_model.pkl
+2026-07-09 00:41:54,496 [INFO] Loaded model 'logistic_regression' from logistic_regression.pkl
+2026-07-09 00:41:54,825 [INFO] Loaded model 'random_forest' from random_forest.pkl
+2026-07-09 00:41:54,838 [INFO] Loaded model 'xgboost' from xgboost.pkl
+2026-07-09 00:41:54,839 [INFO] Loaded scaler (full mode, 30 params)
+2026-07-09 00:41:54,931 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 00:41:54,931 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-09 00:41:54,939 [INFO]  * Restarting with stat
+2026-07-09 00:42:01,562 [INFO] Loaded model 'best_model' from best_model.pkl
+2026-07-09 00:42:02,419 [INFO] Loaded model 'logistic_regression' from logistic_regression.pkl
+2026-07-09 00:42:03,448 [INFO] Loaded model 'random_forest' from random_forest.pkl
+2026-07-09 00:42:03,467 [INFO] Loaded model 'xgboost' from xgboost.pkl
+2026-07-09 00:42:03,469 [INFO] Loaded scaler (full mode, 30 params)
+2026-07-09 00:42:03,514 [WARNING]  * Debugger is active!
+2026-07-09 00:42:03,525 [INFO]  * Debugger PIN: 145-531-737
+2026-07-09 00:42:43,300 [INFO] 127.0.0.1 - - [09/Jul/2026 00:42:43] "GET / HTTP/1.1" 200 -
+2026-07-09 00:42:44,081 [INFO] 127.0.0.1 - - [09/Jul/2026 00:42:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2026-07-09 00:42:44,083 [INFO] 127.0.0.1 - - [09/Jul/2026 00:42:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-07-09 00:42:44,334 [INFO] 127.0.0.1 - - [09/Jul/2026 00:42:44] "GET /api/health HTTP/1.1" 200 -

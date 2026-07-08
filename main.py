@@ -1,33 +1,4 @@
-"""
-main.py — Credit Card Fraud Detection web app.
 
-Loads your EXISTING trained artifacts (does not retrain anything):
-    models/best_model.pkl
-    models/logistic_regression.pkl
-    models/random_forest.pkl
-    models/xgboost.pkl
-    models/scaler_params.json
-
-------------------------------------------------------------------------
-ASSUMPTIONS (documented so you can fix in 2 minutes if your setup differs)
-------------------------------------------------------------------------
-1. Dataset is the classic Kaggle "Credit Card Fraud Detection" dataset:
-   columns Time, V1..V28, Amount, Class. This app expects exactly that
-   feature order: [Time, V1, V2, ..., V28, Amount] = 30 features.
-
-2. scaler_params.json is assumed to look like:
-       { "mean": [<30 numbers>], "scale": [<30 numbers>] }
-   i.e. a serialized sklearn StandardScaler (mean_ and scale_ attributes),
-   fit on ALL 30 columns (Time, V1-V28, Amount) OR just [Time, Amount].
-   The code below tries the 30-feature case first and falls back to a
-   2-feature [Time, Amount] scaler automatically — see `apply_scaler()`.
-
-3. Each .pkl is a plain pickle of a scikit-learn-compatible estimator
-   (has .predict() and .predict_proba()).
-
-4. "best_model.pkl" is used by default; the UI lets you switch between
-   all 4 files so you can compare them without touching code.
-"""
 
 import os
 import json

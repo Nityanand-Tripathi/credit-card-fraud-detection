@@ -7,9 +7,12 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg">
 </p>
 
+
 ## 🌐 Live Demo
 
-🚀 **Experience TrueSwipe live:** https://your-render-app.onrender.com
+🚀 **Live Application:** https://true-swipe.onrender.com/
+
+Experience the deployed application and explore its features in real time.
 
 ## 📌 Overview
 

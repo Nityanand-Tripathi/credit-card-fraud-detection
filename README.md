@@ -7,6 +7,10 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg">
 </p>
 
+## 🌐 Live Demo
+
+🚀 **Experience TrueSwipe live:** https://your-render-app.onrender.com
+
 ## 📌 Overview
 
 TrueSwipe is an AI-powered Credit Card Fraud Detection system that leverages machine learning classification algorithms to identify fraudulent transactions with high accuracy. The project implements a complete end-to-end machine learning pipeline, from data preprocessing and feature engineering to model training, evaluation, and prediction.
